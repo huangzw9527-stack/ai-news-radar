@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AI 资讯雷达</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Work+Sans:wght@600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#372abf",
+                        "background": "#f7f9fb",
+                        "secondary-fixed": "#e3dfff",
+                        "on-tertiary-fixed": "#1a1b23",
+                        "on-primary-fixed-variant": "#3e3c8f",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-container": "#eceef0",
+                        "on-primary-container": "#9c9af4",
+                        "surface-tint": "#5654a8",
+                        "on-tertiary-container": "#a3a3ad",
+                        "surface-variant": "#e0e3e5",
+                        "outline-variant": "#c8c5d3",
+                        "primary": "#1a146b",
+                        "tertiary": "#23242c",
+                        "on-secondary-fixed": "#100069",
+                        "on-surface-variant": "#474651",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1e",
+                        "tertiary-fixed-dim": "#c7c5d1",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "surface-dim": "#d8dadc",
+                        "outline": "#777682",
+                        "secondary-container": "#6860ef",
+                        "inverse-primary": "#c3c0ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary-fixed": "#e3e1ed",
+                        "surface": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#393942",
+                        "on-primary-fixed": "#100563",
+                        "primary-container": "#312e81",
+                        "secondary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-fixed-variant": "#46464f",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface": "#191c1e",
+                        "secondary": "#4e45d5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "sidebar-width": "280px",
+                        "margin-page": "40px",
+                        "gutter": "24px",
+                        "stack-gap": "16px",
+                        "card-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Work Sans"],
+                        "headline-md": ["Work Sans"],
+                        "headline-lg": ["Work Sans"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.7", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 font-['Work_Sans'] text-sm font-medium tracking-tight text-indigo-900 dark:text-indigo-400 docked full-width top-0 sticky z-40 border-b border-slate-100 dark:border-slate-800 shadow-sm flex justify-between items-center w-full px-6 py-3 ml-64 max-w-[calc(100%-16rem)]">
+<div class="flex items-center gap-8">
+<div class="text-xl font-black text-indigo-950 dark:text-white tracking-tighter cursor-pointer active:opacity-70 transition-all" style="">AI 资讯</div>
+<nav class="hidden md:flex gap-6">
+<a class="text-indigo-900 dark:text-indigo-300 border-b-2 border-indigo-900 dark:border-indigo-400 pb-1 cursor-pointer active:opacity-70 transition-all" href="#" style="">报告</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded cursor-pointer active:opacity-70 transition-all" href="#" style="">配置</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-[16px]" style="">analytics</span>仅分析
+            </button>
+<button class="border border-primary text-primary font-label-caps text-label-caps px-4 py-2 rounded shadow-sm hover:bg-slate-50 transition-colors flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-[16px]" style="">download</span>下载报告</button>
+<div class="flex items-center gap-3 ml-4 border-l border-slate-200 pl-4">
+<span class="material-symbols-outlined cursor-pointer active:opacity-70 transition-all text-slate-500 hover:text-indigo-700" style="">notifications</span>
+<span class="material-symbols-outlined cursor-pointer active:opacity-70 transition-all text-slate-500 hover:text-indigo-700" style="">account_circle</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="bg-white dark:bg-slate-900 text-indigo-900 dark:text-indigo-400 font-['Work_Sans'] text-xs uppercase tracking-widest font-semibold fixed left-0 top-0 h-screen w-64 border-r border-slate-100 dark:border-slate-800 divide-y divide-slate-50 dark:divide-slate-800 shadow-[20px_0_40px_rgba(49,46,129,0.04)] flex flex-col h-full overflow-y-auto z-50">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="">radar</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-indigo-900 dark:text-indigo-300" style="">AI新闻收集</h2>
+<p class="font-caption text-caption text-slate-500 capitalize" style="">分析报告</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-2 rounded shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mb-4" style="">
+<span class="material-symbols-outlined text-[18px]" style="">add</span>采集新闻</button>
+</div>
+<nav class="flex-1 py-4">
+<a class="bg-indigo-50 dark:bg-indigo-950/30 text-indigo-900 dark:text-indigo-200 border-l-4 border-indigo-900 dark:border-indigo-500 flex items-center px-4 py-3 cursor-pointer select-none mb-1" href="#" style="">
+<span class="material-symbols-outlined mr-3" style="">today</span>
+                今日
+            </a>
+<a class="text-slate-600 dark:text-slate-400 flex items-center px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none mb-1 border-l-4 border-transparent" href="#" style="">
+<span class="material-symbols-outlined mr-3" style="">calendar_view_week</span>
+                最近7天
+            </a>
+<a class="text-slate-600 dark:text-slate-400 flex items-center px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none mb-1 border-l-4 border-transparent" href="#" style="">
+<span class="material-symbols-outlined mr-3" style="">history</span>
+                2024年3月
+            </a>
+<a class="text-slate-600 dark:text-slate-400 flex items-center px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none mb-1 border-l-4 border-transparent" href="#" style="">
+<span class="material-symbols-outlined mr-3" style="">inventory_2</span>
+                2024年2月
+            </a>
+<a class="text-slate-600 dark:text-slate-400 flex items-center px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none mb-1 border-l-4 border-transparent" href="#" style="">
+<span class="material-symbols-outlined mr-3" style="">archive</span>
+                归档
+            </a>
+</nav>
+<div class="p-4">
+<a class="text-slate-600 dark:text-slate-400 flex items-center px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none mb-1 rounded" href="#" style="">
+<span class="material-symbols-outlined mr-3" style="">settings</span>
+                设置
+            </a>
+<a class="text-slate-600 dark:text-slate-400 flex items-center px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none rounded" href="#" style="">
+<span class="material-symbols-outlined mr-3" style="">help_outline</span>
+                支持
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-margin-page max-w-container-max mx-auto">
+<!-- Strategy Advisory Section -->
+<section class="mb-gutter bg-surface-container-low border-l-4 border-primary rounded-r-lg p-card-padding shadow-[20px_0_40px_rgba(49,46,129,0.03)]">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-2 rounded-full text-primary mt-1">
+<span class="material-symbols-outlined" style="">lightbulb</span>
+</div>
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-4" style="">AI 资讯战略建议</h1>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-2" style="">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1 shrink-0" style="">check_circle</span>
+<span class="" style=""><strong>监控多模态大模型：</strong>能够同时处理文本、图像和音频的模型的快速发展表明，人工智能架构正在向更加统一的方向转变。</span>
+</li>
+<li class="flex items-start gap-2" style="">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1 shrink-0" style="">check_circle</span>
+<span class="" style=""><strong>观察开源活动：</strong>更小、高度优化的开源模型的重大进步正在缩小与专有对应模型的性能差距。</span>
+</li>
+<li class="flex items-start gap-2" style="">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1 shrink-0" style="">check_circle</span>
+<span class="" style=""><strong>监管合规重点：</strong>新兴的国际人工智能框架需要主动调整数据治理和合规协议。</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Overview Section -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-gap border-b border-surface-variant pb-2" style="">AI 资讯概览</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-card-padding shadow-[20px_0_40px_rgba(49,46,129,0.04)] hover:shadow-[20px_0_40px_rgba(49,46,129,0.08)] hover:border-primary/20 border border-transparent transition-all duration-300 flex flex-col group">
+<header class="mb-4">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-secondary/10 text-secondary font-label-caps text-label-caps px-2 py-1 rounded" style="">大模型架构</span>
+<span class="font-caption text-caption text-outline" style="">TechCrunch • 2小时前</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors" style="">稀疏注意力机制的突破降低了推理成本</h3>
+</header>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" style="">研究人员引入了一种新颖的稀疏注意力算法，该算法显著降低了大型语言模型推理阶段的内存占用和计算要求，而不会大幅降低输出质量。</p>
+<footer class="mt-auto border-t border-surface-variant pt-4">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-3" style="">关键点</h4>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]" style="">school</span>
+<span class="font-caption text-caption text-on-surface-variant" style="">概念</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="">architecture</span>
+<span class="font-caption text-caption text-on-surface-variant" style="">原理</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-container text-[16px]" style="">build</span>
+<span class="font-caption text-caption text-on-surface-variant" style="">实践</span>
+</div>
+</div>
+</footer>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-card-padding shadow-[20px_0_40px_rgba(49,46,129,0.04)] hover:shadow-[20px_0_40px_rgba(49,46,129,0.08)] hover:border-primary/20 border border-transparent transition-all duration-300 flex flex-col group">
+<header class="mb-4">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-secondary/10 text-secondary font-label-caps text-label-caps px-2 py-1 rounded" style="">AI 应用</span>
+<span class="font-caption text-caption text-outline" style="">Wired • 5小时前</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors" style="">生成式AI在企业资源计划(ERP)系统中的整合</h3>
+</header>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" style="">主要企业软件供应商正在推出将生成式AI功能直接嵌入核心ERP工作流程的更新，旨在自动化日常财务报告和供应链预测任务。</p>
+<footer class="mt-auto border-t border-surface-variant pt-4">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-3" style="">关键点</h4>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]" style="">school</span>
+<span class="font-caption text-caption text-on-surface-variant" style="">概念</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="">architecture</span>
+<span class="font-caption text-caption text-on-surface-variant" style="">原理</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-container text-[16px]" style="">build</span>
+<span class="font-caption text-caption text-on-surface-variant" style="">实践</span>
+</div>
+</div>
+</footer>
+</article>
+</div>
+</section>
+</main>
+</body></html>
