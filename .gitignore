@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+data/
+.env
+node_modules/
+
+# 本地运行时配置（含 API key），仅跟踪 config.example.yaml
+config.yaml
+data/twitter_accounts.db
+
+# 本地代理脚本
+翻墙cmd1.bat
+
+# 运行时数据库
+*.db
+
+# Claude Code 本地设置
+.claude/settings.local.json

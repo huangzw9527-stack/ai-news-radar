@@ -1,0 +1,293 @@
+categories:
+- 模型发布
+- 产品动态
+- 产业商业
+- 研究论文
+- 实操技巧
+- 观点深度
+collection:
+  date_window_days: 3
+  db_limit: 300
+  max_per_source: 5
+  timeout_seconds: 30
+database:
+  path: data/news_radar.db
+dedup:
+  semantic_threshold: 0.85
+llm:
+  api_key: ''
+  base_url: https://api.minimaxi.com/v1
+  model: MiniMax-M2.7
+  provider: openai
+scheduler:
+  cron: 0 8 * * *
+  enabled: true
+sources:
+  proxy_probe_timeout: 5
+  proxy_url: http://127.0.0.1:10809
+  twitter:
+    accounts:
+    - display_name: OpenAI 官方
+      handle: OpenAI
+    - display_name: Anthropic 官方
+      handle: AnthropicAI
+    - display_name: Google DeepMind
+      handle: GoogleDeepMind
+    - display_name: Yann LeCun
+      handle: ylecun
+    - display_name: Andrej Karpathy
+      handle: karpathy
+    - display_name: 向阳乔木
+      handle: vista8
+    - display_name: 宝玉
+      handle: dotey
+    - display_name: AYi
+      handle: AYi_AInotes
+    - display_name: huangserva
+      handle: servasyy_ai
+    - display_name: berryxia
+      handle: berryxia
+    - display_name: 花叔
+      handle: AlchainHust
+    enabled: true
+    fetch_delay_max: 20
+    fetch_delay_min: 8
+    max_total_tweets: 150
+    max_tweets_per_account: 10
+    tweet_delay_max: 3
+    tweet_delay_min: 1
+    use_proxy: true
+  websites:
+  - indicator: academic
+    institution: OpenAI
+    name: OpenAI Blog
+    tier: 1
+    type: rss
+    url: https://openai.com/news/rss.xml
+    use_proxy: true
+  - indicator: academic
+    institution: Anthropic
+    name: Anthropic News
+    selector: a[href*="/news/"]
+    tier: 1
+    type: scrape
+    url: https://www.anthropic.com/news
+    use_proxy: true
+  - indicator: academic
+    institution: DeepMind
+    name: Google DeepMind Blog
+    tier: 1
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+    use_proxy: true
+  - indicator: academic
+    institution: Meta
+    name: Meta AI Blog
+    tier: 1
+    type: rss
+    url: https://engineering.fb.com/feed/
+    use_proxy: true
+  - indicator: academic
+    institution: Google
+    name: Google AI Blog
+    tier: 1
+    type: rss
+    url: https://blog.google/technology/ai/rss/
+    use_proxy: true
+  - indicator: academic
+    institution: arXiv
+    name: arXiv cs.AI
+    tier: 1
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.AI
+    use_proxy: true
+  - indicator: academic
+    institution: arXiv
+    name: arXiv cs.CL
+    tier: 1
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.CL
+    use_proxy: true
+  - indicator: academic
+    institution: Hugging Face
+    name: Hugging Face Blog
+    tier: 1
+    type: rss
+    url: https://huggingface.co/blog/feed.xml
+    use_proxy: true
+  - indicator: academic
+    institution: 智谱AI
+    name: 智谱AI官方
+    selector: article, .news-item, .post-item
+    tier: 1
+    type: scrape
+    url: https://www.zhipuai.cn/zh/research
+    use_proxy: false
+  - indicator: academic
+    institution: DeepSeek
+    name: DeepSeek官网
+    selector: article
+    tier: 1
+    type: scrape
+    url: https://www.deepseek.com/
+    use_proxy: false
+  - indicator: industry
+    institution: TechCrunch
+    name: TechCrunch AI
+    tier: 2
+    type: rss
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+    use_proxy: true
+  - indicator: frontier
+    institution: MIT Tech Review
+    name: MIT Technology Review
+    tier: 2
+    type: rss
+    url: https://www.technologyreview.com/feed/
+    use_proxy: true
+  - indicator: frontier
+    institution: The Verge
+    name: The Verge AI
+    tier: 2
+    type: rss
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+    use_proxy: true
+  - indicator: frontier
+    institution: Wired
+    name: Wired AI
+    tier: 2
+    type: rss
+    url: https://www.wired.com/feed/tag/ai/latest/rss
+    use_proxy: true
+  - indicator: industry
+    institution: 量子位
+    name: 量子位
+    tier: 2
+    type: rss
+    url: https://www.qbitai.com/feed
+    use_proxy: false
+  - indicator: industry
+    institution: 机器之心
+    name: 机器之心
+    selector: article a, .article-title a, h3 a
+    tier: 2
+    type: scrape
+    url: https://jiqizhixin.com/
+    use_proxy: false
+  - indicator: industry
+    institution: 晚点LatePost
+    name: 晚点LatePost
+    selector: .article-item a, .news-item a, h3 a, h2 a
+    tier: 2
+    type: scrape
+    url: https://www.latepost.com/
+    use_proxy: false
+  - indicator: frontier
+    institution: DeepLearning.AI
+    name: The Batch DeepLearning.AI
+    selector: article, .post-card, .batch-item
+    tier: 2
+    type: scrape
+    url: https://www.deeplearning.ai/the-batch/
+    use_proxy: true
+  - indicator: industry
+    institution: InfoQ
+    keyword_filter: true
+    name: InfoQ
+    tier: 2
+    type: rss
+    url: https://www.infoq.cn/feed
+    use_proxy: false
+  - indicator: industry
+    institution: 36氪
+    keyword_filter: true
+    name: 36氪AI频道
+    tier: 2
+    type: rss
+    url: https://36kr.com/feed
+    use_proxy: false
+  - indicator: frontier
+    institution: Y Combinator
+    name: Hacker News
+    tier: 3
+    type: rss
+    url: https://hnrss.org/frontpage
+    use_proxy: true
+  - indicator: frontier
+    institution: Reddit
+    name: Reddit MachineLearning
+    tier: 3
+    type: rss
+    url: https://www.reddit.com/r/MachineLearning/.rss
+    use_proxy: true
+  - indicator: frontier
+    institution: Reddit
+    name: Reddit LocalLLaMA
+    tier: 3
+    type: rss
+    url: https://www.reddit.com/r/LocalLLaMA/.rss
+    use_proxy: true
+  - indicator: frontier
+    institution: Ben's Bites
+    name: Ben's Bites
+    tier: 3
+    type: rss
+    url: https://bensbites.com/feed
+    use_proxy: true
+  - indicator: frontier
+    institution: TLDR
+    name: TLDR AI
+    tier: 3
+    type: rss
+    url: https://tldr.tech/api/rss/ai
+    use_proxy: true
+  - indicator: frontier
+    institution: Last Week in AI
+    name: Last Week in AI
+    tier: 3
+    type: rss
+    url: https://lastweekin.ai/feed
+    use_proxy: true
+  - indicator: agent
+    institution: LangChain
+    name: LangChain Blog
+    tier: 3
+    type: rss
+    url: https://changelog.langchain.com/feed.xml
+    use_proxy: true
+  - indicator: industry
+    institution: 钛媒体
+    keyword_filter: true
+    name: 钛媒体
+    tier: 3
+    type: rss
+    url: https://www.tmtpost.com/rss.xml
+    use_proxy: false
+  - indicator: industry
+    institution: AIBase
+    name: AIBase
+    selector: a[href*='/news/']
+    tier: 3
+    type: scrape
+    url: https://www.aibase.com/zh/news
+    use_proxy: false
+  wechat:
+  - indicator: industry
+    institution: 量子位
+    name: 量子位（公众号）
+    nickname: 量子位
+    tier: 2
+    use_proxy: false
+  - indicator: industry
+    institution: 机器之心
+    name: 机器之心（公众号）
+    nickname: 机器之心
+    tier: 2
+    use_proxy: false
+  - indicator: industry
+    institution: 新智元
+    name: 新智元（公众号）
+    nickname: 新智元
+    tier: 3
+    use_proxy: false
+topics: []
