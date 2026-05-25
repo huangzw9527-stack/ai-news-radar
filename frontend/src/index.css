@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surface & background */
+  --color-background: #f7f9fb;
+  --color-on-background: #191c1e;
+  --color-surface: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-bright: #ffffff;
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-high: #e6e8ea;
+  --color-surface-highest: #e0e3e5;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #474651;
+
+  /* Primary (Deep Indigo) */
+  --color-primary: #1a146b;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #312e81;
+  --color-on-primary-container: #ffffff;
+  --color-primary-soft: #e2dfff;
+  --color-primary-soft-strong: #c3c0ff;
+
+  /* Secondary (Medium Indigo) */
+  --color-secondary: #4e45d5;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #6860ef;
+  --color-secondary-soft: #e3dfff;
+
+  /* Tertiary / outlines */
+  --color-outline: #777682;
+  --color-outline-variant: #c8c5d3;
+
+  /* Status */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-success: #047857;
+  --color-success-soft: #d1fae5;
+
+  /* Category accents (kept lightweight) */
+  --color-cat-blue: #2563eb;
+  --color-cat-blue-soft: #dbeafe;
+  --color-cat-violet: #7c3aed;
+  --color-cat-violet-soft: #ede9fe;
+  --color-cat-emerald: #047857;
+  --color-cat-emerald-soft: #d1fae5;
+
+  /* Typography */
+  --font-sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-display: "Work Sans", "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* Spacing tokens */
+  --spacing-sidebar: 17.5rem; /* 280px */
+  --spacing-page: 2.5rem;     /* 40px */
+  --spacing-gutter: 1.5rem;   /* 24px */
+  --spacing-card: 1.5rem;     /* 24px */
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-on-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Subtle scrollbar for sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 9999px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
