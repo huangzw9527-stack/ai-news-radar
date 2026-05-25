@@ -1,0 +1,290 @@
+sources:
+  # === 学术引领力 (weight: 37) ===
+  - name: OpenAI Research Blog
+    institution: OpenAI
+    tier: 1
+    indicator: academic
+    type: rss
+    url: https://openai.com/blog/rss.xml
+
+  - name: Google DeepMind Blog
+    institution: DeepMind
+    tier: 1
+    indicator: academic
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+
+  - name: Anthropic Research
+    institution: Anthropic
+    tier: 1
+    indicator: academic
+    type: scrape
+    url: https://www.anthropic.com/research
+    selector: "a[href*='/research/']"
+
+  - name: Microsoft Research Blog
+    institution: Microsoft
+    tier: 1
+    indicator: academic
+    type: rss
+    url: https://www.microsoft.com/en-us/research/feed/
+
+  - name: arXiv cs.AI
+    institution: arXiv
+    tier: 1
+    indicator: academic
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.AI
+
+  - name: arXiv cs.LG
+    institution: arXiv
+    tier: 1
+    indicator: academic
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.LG
+
+  - name: 智谱AI官方博客
+    institution: 智谱AI
+    tier: 1
+    indicator: academic
+    type: scrape
+    url: https://www.zhipuai.cn/zh/research
+    selector: "article, .news-item, .post-item"
+
+  - name: 智源研究院
+    institution: 智源研究院
+    tier: 1
+    indicator: academic
+    type: scrape
+    url: https://www.baai.ac.cn/zh-cn/about-us#news
+    selector: ".news-item"
+
+  - name: DeepSeek官网动态
+    institution: DeepSeek
+    tier: 1
+    indicator: academic
+    type: scrape
+    url: https://www.deepseek.com/
+    selector: "article"
+
+  - name: 商汤科技动态
+    institution: 商汤科技
+    tier: 1
+    indicator: academic
+    type: rss
+    url: https://news.google.com/rss/search?q=%E5%95%86%E6%B1%A4%E7%A7%91%E6%8A%80+AI&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+
+  # === 产业转化力 (weight: 32) ===
+  - name: Hugging Face Blog
+    institution: Hugging Face
+    tier: 1
+    indicator: industry
+    type: rss
+    url: https://huggingface.co/blog/feed.xml
+
+  - name: 阿里达摩院
+    institution: 阿里
+    tier: 1
+    indicator: industry
+    type: scrape
+    url: https://damo.alibaba.com/events
+    selector: "article, .event-item, .news-item"
+
+  - name: 字节跳动火山引擎
+    institution: 字节跳动
+    tier: 2
+    indicator: industry
+    type: scrape
+    url: https://www.volcengine.com/news
+    selector: ".news-card"
+
+  # === 资本与生态力 (weight: 12) ===
+  - name: Crunchbase AI新闻
+    institution: Crunchbase
+    tier: 1
+    indicator: capital
+    type: rss
+    url: https://news.crunchbase.com/feed/
+
+  - name: TechCrunch AI
+    institution: TechCrunch
+    tier: 2
+    indicator: capital
+    type: rss
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+
+  # === Agent化转型 (weight: 10) ===
+  - name: LangChain Blog
+    institution: LangChain
+    tier: 2
+    indicator: agent
+    type: rss
+    url: https://blog.langchain.dev/rss/
+
+  - name: AutoGen Microsoft
+    institution: Microsoft
+    tier: 1
+    indicator: agent
+    type: rss
+    url: https://github.com/microsoft/autogen/releases.atom
+
+  # === 前沿战略力 (weight: 9) ===
+  - name: MIT Technology Review AI
+    institution: MIT Tech Review
+    tier: 2
+    indicator: frontier
+    type: rss
+    url: https://www.technologyreview.com/feed/
+
+  - name: The Batch DeepLearning.AI
+    institution: DeepLearning.AI
+    tier: 2
+    indicator: frontier
+    type: scrape
+    url: https://www.deeplearning.ai/the-batch/
+    selector: "article, .post-card, .batch-item"
+
+  # === 国内综合信源 ===
+  - name: 量子位
+    institution: 量子位
+    tier: 2
+    indicator: industry
+    type: rss
+    url: https://www.qbitai.com/feed
+
+  - name: 机器之心
+    institution: 机器之心
+    tier: 2
+    indicator: industry
+    type: rss
+    url: https://news.google.com/rss/search?q=site:jiqizhixin.com+AI&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+
+  - name: 36氪AI频道
+    institution: 36氪
+    tier: 2
+    indicator: industry
+    type: rss
+    url: https://36kr.com/feed
+
+  - name: 钛媒体
+    institution: 钛媒体
+    tier: 2
+    indicator: industry
+    type: rss
+    url: https://www.tmtpost.com/rss.xml
+
+  - name: InfoQ
+    institution: InfoQ
+    tier: 2
+    indicator: industry
+    type: rss
+    url: https://www.infoq.cn/feed
+
+  # AI前线 (ai.infoq.cn) 和极客公园 (geekpark.net) 已无法访问，已移除
+
+  # === 新增信源 (2026-03-17) ===
+
+  # 国内 AI 垂直媒体
+  - name: 新智元
+    institution: 新智元
+    tier: 2
+    indicator: industry
+    type: rss
+    url: https://www.xinzhiyuan.com/feed
+    selector: "article, .post-item"
+
+  - name: AI科技评论
+    institution: 雷锋网
+    tier: 2
+    indicator: industry
+    type: scrape
+    url: https://www.leiphone.com/category/ai
+    selector: "div.word, div.box"
+
+  # 海外头部科技媒体
+  - name: The Verge AI
+    institution: The Verge
+    tier: 2
+    indicator: frontier
+    type: rss
+    url: https://www.theverge.com/ai-artificial-intelligence/rss/index.xml
+
+  - name: Google AI Blog
+    institution: Google
+    tier: 1
+    indicator: academic
+    type: rss
+    url: https://blog.google/technology/ai/rss/
+
+  # 开发者 / 技术社区
+  - name: Hacker News
+    institution: Y Combinator
+    tier: 2
+    indicator: frontier
+    type: rss
+    url: https://hnrss.org/frontpage
+
+  - name: Product Hunt
+    institution: Product Hunt
+    tier: 2
+    indicator: industry
+    type: rss
+    url: https://www.producthunt.com/feed
+
+  # AI 周报 / Newsletter
+  - name: Last Week in AI
+    institution: Last Week in AI
+    tier: 2
+    indicator: frontier
+    type: rss
+    url: https://lastweekin.ai/feed
+
+  - name: Import AI
+    institution: Import AI
+    tier: 2
+    indicator: frontier
+    type: scrape
+    url: https://importai.net
+    selector: "article, .post-item, .newsletter-item"
+
+  - name: Platformer
+    institution: Platformer
+    tier: 2
+    indicator: frontier
+    type: scrape
+    url: https://www.platformer.news
+    selector: "article, .post-item"
+
+  # === 新增信源 (2026-03-22) ===
+
+  - name: AIBase基地
+    institution: AIBase
+    tier: 2
+    indicator: industry
+    type: scrape
+    url: https://www.aibase.com/zh/news
+    selector: "a[href*='/news/']"
+
+  # === 微信公众号 (2026-03-25) ===
+  # 需要先通过 POST /api/wechat/login 扫码授权
+
+  - name: 量子位（公众号）
+    institution: 量子位
+    tier: 2
+    indicator: industry
+    type: wechat
+    nickname: 量子位
+
+  - name: 机器之心（公众号）
+    institution: 机器之心
+    tier: 2
+    indicator: industry
+    type: wechat
+    nickname: 机器之心
+
+  - name: 新智元（公众号）
+    institution: 新智元
+    tier: 2
+    indicator: industry
+    type: wechat
+    nickname: 新智元
